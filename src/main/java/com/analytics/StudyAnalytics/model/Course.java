@@ -3,25 +3,30 @@ package com.analytics.StudyAnalytics.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 
-@Document(collection="Course")
+@Document(collection="course")
 public class Course {
     @Id
     private String id;
     private String courseName;
     private String courseDescription;
     private String courseType;
-    private CourseTemplate courseTemplate;
-    private String courseImage;
-    private String courseLearningHours;
-    private List courseFaculty;
+    //private List<CourseDetails> courseDetails;
+    private String courseUrl;
+    private String courseHours;
 
-    public String getId() {
+    /*protected Course()
+    {
+        this.courseDetails=new ArrayList<>();
+    }*/
+
+    public String getid() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setid(String _id) {
         this.id = id;
     }
 
@@ -49,35 +54,30 @@ public class Course {
         this.courseType = courseType;
     }
 
-    public CourseTemplate getCourseTemplate() {
-        return courseTemplate;
+    /*public List<CourseDetails> getCourseDetails() {
+        return courseDetails;
     }
 
-    public void setCourseTemplate(CourseTemplate courseTemplate) {
-        this.courseTemplate = courseTemplate;
+    public void setCourseDetails(List<CourseDetails> courseDetails) {
+        this.courseDetails = courseDetails;
+    }*/
+
+    public String getCourseUrl() {
+        return courseUrl;
     }
 
-    public String getCourseImage() {
-        return courseImage;
+    public void setCourseUrl(String courseUrl) {
+        this.courseUrl = courseUrl;
     }
 
-    public void setCourseImage(String courseImage) {
-        this.courseImage = courseImage;
+    public String getCourseHours() {
+        return courseHours;
     }
 
-    public String getCourseLearningHours() {
-        return courseLearningHours;
-    }
-
-    public void setCourseLearningHours(String courseLearningHours) {
-        this.courseLearningHours = courseLearningHours;
-    }
-
-    public List getCourseFaculty() {
-        return courseFaculty;
-    }
-
-    public void setCourseFaculty(List courseFaculty) {
-        this.courseFaculty = courseFaculty;
+    public void setCourseHours(String courseHours) {
+        this.courseHours = courseHours;
     }
 }
+
+
+

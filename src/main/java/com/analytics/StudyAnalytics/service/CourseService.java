@@ -13,7 +13,7 @@ public class CourseService{
     CourseRepository courseRepository;
     public List<Course> getAllCourses() throws Exception {
         List<Course> c = courseRepository.findAll();
-        //System.out.println(c.getCourseDetails());
+        System.out.println("Size: "+c.size());
         return c;
     }
 }

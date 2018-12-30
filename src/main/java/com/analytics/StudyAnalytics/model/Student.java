@@ -1,8 +1,17 @@
 package com.analytics.StudyAnalytics.model;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class Student {
+
+    @NotNull(message="name can,t be null")
+    @Size(min=3, max=15)
     private String name;
+    @NotNull(message="rollno can,t be null")
+    @Size(min=3, max=15)
     private String rollno;
+    @NotNull(message ="age can't be null")
     private Integer age;
 
     public Student(String name, String rollno, Integer age) {

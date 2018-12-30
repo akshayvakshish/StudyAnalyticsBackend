@@ -10,6 +10,7 @@ public class LeadService {
     @Autowired
     LeadRepository leadRepository;
     public Lead addLead(Lead lead) throws Exception {
+
         Lead c = leadRepository.save(lead);
         //System.out.println(c.getCourseDetails());
         return c;
